@@ -14,7 +14,9 @@ const ProfileInfo = ({
   saveProfile,
 }) => {
   let [editMode, setEditMode] = useState(false);
-  
+  if (!profile) {
+    return <Preloader />;
+  }
 
   const onMainPhotoSelected = (e) => {
     if (e.target.files.length) {
